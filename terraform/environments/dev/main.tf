@@ -6,5 +6,5 @@ module "lambda" {
   handler               = "lambda.handler"
   memory_size           = var.lambda_memory_size
   timeout               = var.lambda_timeout
-  log_retention_in_days = var.log_retention_in_days
+  log_retention_in_days = var.log_retention_days
 }
