@@ -2,14 +2,17 @@
   "name": "terraform-playground",
   "type": "module",
   "scripts": {
-    "build": "esbuild --bundle --outfile=./dist/lambda.js --platform=node --target=node20 ./src/lambda.ts",
+    "dev": "vite",
+    "build": "esbuild --bundle --outfile=./dist/lambda.js --platform=node --target=node22 ./src/lambda.ts",
     "zip": "zip -j lambda.zip dist/lambda.js",
     "update": "aws lambda update-function-code --zip-file fileb://lambda.zip --function-name hello",
     "deploy": "run-s build zip update"
   },
   "devDependencies": {
+    "@hono/vite-dev-server": "^0.18.1",
     "esbuild": "^0.21.4",
-    "npm-run-all2": "^6.2.0"
+    "npm-run-all2": "^6.2.0",
+    "vite": "^6.1.0"
   },
   "dependencies": {
     "@hono/node-server": "^1.13.8",
