@@ -2,8 +2,8 @@
   "name": "terraform-playground",
   "type": "module",
   "scripts": {
-    "build": "esbuild --bundle --outfile=./dist/index.js --platform=node --target=node20 ./src/index.ts",
-    "zip": "zip -j lambda.zip dist/index.js",
+    "build": "esbuild --bundle --outfile=./dist/lambda.js --platform=node --target=node20 ./src/lambda.ts",
+    "zip": "zip -j lambda.zip dist/lambda.js",
     "update": "aws lambda update-function-code --zip-file fileb://lambda.zip --function-name hello",
     "deploy": "run-s build zip update"
   },
