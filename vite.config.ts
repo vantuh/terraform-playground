@@ -4,10 +4,11 @@ import { defineConfig, loadEnv } from 'vite';
 
 export default defineConfig(({ mode }) => {
 	const env = loadEnv(mode, process.cwd());
+	const PORT = parseInt(env.VITE_PORT) ?? 3000;
 
 	return {
 		server: {
-			port: parseInt(env.VITE_PORT) ?? 3000
+			port: PORT
 		},
 		plugins: [
 			devServer({
@@ -15,7 +16,7 @@ export default defineConfig(({ mode }) => {
 			}),
 			build({
 				entry: 'src/app.ts',
-				port: parseInt(env.VITE_PORT) ?? 3000,
+				port: PORT,
 			}),
 		],
 	}
