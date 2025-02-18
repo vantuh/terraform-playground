@@ -1,19 +1,19 @@
 variable "aws_region" {
+  description = "The AWS region to deploy the resources"
   type        = string
-  description = "AWS region"
   default     = "eu-central-1"
 }
 
-variable "environment" {
+variable "project_name" {
+  description = "The name of the project"
   type        = string
-  description = "Environment name (e.g. dev, prod)"
-  default     = "dev"
+  default     = "terraform-playground"
 }
 
-variable "project_name" {
+variable "environment" {
+  description = "The environment to deploy the resources"
   type        = string
-  description = "Name of the project"
-  default     = "terraform-playground"
+  default     = "dev"
 }
 
 variable "lambda_memory_size" {
@@ -28,8 +28,8 @@ variable "lambda_timeout" {
   default     = 15
 }
 
-variable "log_retention_in_days" {
+variable "log_retention_days" {
+  description = "The retention days for the logs in CloudWatch"
   type        = number
-  description = "Log retention in days"
-  default     = 7
+  default     = 30
 }
