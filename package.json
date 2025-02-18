@@ -5,7 +5,7 @@
     "dev": "vite",
     "build:dev": "vite build",
     "build:lambda": "esbuild --bundle --outfile=./dist/lambda.js --platform=node --target=node22 ./src/lambda.ts",
-    "zip": "zip -j lambda.zip dist/lambda.js",
+    "zip": "zip -j dist/lambda.zip dist/lambda.js",
     "update": "aws lambda update-function-code --zip-file fileb://lambda.zip --function-name hello",
     "deploy": "run-s build:lambda zip update",
     "format": "prettier --write ."
