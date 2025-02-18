@@ -5,3 +5,4 @@ CHANGELOG.md
 infra/cdk.out
 .vscode/**
 .yarnrc.yml
+terraform/**
