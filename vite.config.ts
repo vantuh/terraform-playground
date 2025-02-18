@@ -1,3 +1,4 @@
+import build from '@hono/vite-build/node';
 import devServer from '@hono/vite-dev-server';
 import { defineConfig, loadEnv } from 'vite';
 
@@ -12,6 +13,10 @@ export default defineConfig(({ mode }) => {
 			devServer({
 				entry: 'src/app.ts',
 			}),
+			build({
+				entry: 'src/app.ts',
+				port: parseInt(env.VITE_PORT) ?? 3000,
+			}),
 		],
 	}
-})
+});

@@ -3,14 +3,14 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "esbuild --bundle --outfile=./dist/lambda.js --platform=node --target=node22 ./src/lambda.ts",
+    "build": "vite build",
     "zip": "zip -j lambda.zip dist/lambda.js",
     "update": "aws lambda update-function-code --zip-file fileb://lambda.zip --function-name hello",
     "deploy": "run-s build zip update"
   },
   "devDependencies": {
+    "@hono/vite-build": "^1.3.0",
     "@hono/vite-dev-server": "^0.18.1",
-    "esbuild": "^0.21.4",
     "npm-run-all2": "^6.2.0",
     "vite": "^6.1.0"
   },
